@@ -36,7 +36,7 @@
   <h3 align="center">chempp</h3>
 
   <p align="center">
-    [Large scale] concurrent chemical search using Postgres RDKit cartridge, Oat++ and native C++ features.
+    [Large scale] concurrent chemical search using RDKit cartridge, Oat++ and native Postgres & C++ features.
     <br />
     <a href="https://github.com/michelml/chempp"><strong>Explore the docs »</strong></a>
     <br />
@@ -84,7 +84,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://github.com/MichelML/chempp)
 
-**chempp** [kem-pee-pee], is a large scale concurrent chemical search engine using Postgres RDKit cartridge, Oat++ and native C++ features.
+**chempp** [kem-pee-pee], is a large scale concurrent chemical search using RDKit cartridge, Oat++ and native Postgres & C++ features.
 
 This is my capstone project for the C++ nanodegree https://www.udacity.com/course/c-plus-plus-nanodegree--nd213 .
 
