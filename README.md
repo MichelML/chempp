@@ -20,16 +20,16 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][[contributors-url](https://github.com/MichelML/chempp/graphs/contributors)]
-[![Forks][forks-shield]][[forks-url](https://github.com/MichelML/chempp/network/members)]
-[![Stargazers][stars-shield]][[stars-url](https://github.com/MichelML/chempp/stargazers)]
-[![Issues][issues-shield]][[issues-url](https://github.com/MichelML/chempp/issues)]
-[![MIT License][license-shield]][[LICENSE](https://github.com/MichelML/chempp/blob/master/LICENSE)]
+[![Contributors][contributors-shield]][https://github.com/MichelML/chempp/graphs/contributors]
+[![Forks][forks-shield]][https://github.com/MichelML/chempp/network/members]
+[![Stargazers][stars-shield]][https://github.com/MichelML/chempp/stargazers]
+[![Issues][issues-shield]][https://github.com/MichelML/chempp/issues]
+[![MIT License][license-shield]][https://github.com/MichelML/chempp/blob/master/LICENSE]
 
 <br />
 <p align="center">
   <a href="https://github.com/michelml/chempp">
-    <img src="chempp.png" alt="Chempp - Project Logo" width="200" height="200">
+    <img src="chempp.png" alt="Chempp - Project Logo" width="300" height="300">
   </a>
 
   <h3 align="center">chempp</h3>
@@ -169,25 +169,4 @@ Project Link: [https://github.com/michelml/chempp](https://github.com/michelml/c
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* []()
-* []()
-* []()
-
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/michelml/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/michelml/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/michelml/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/michelml/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/michelml/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/michelml/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/michelml/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/michelml/repo/issues
-[license-shield]: https://img.shields.io/github/license/michelml/repo.svg?style=for-the-badge
-[license-url]: https://github.com/michelml/repo/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/michelml
+Thank you Udacity, RDKit, Oat++, and CPP team.
