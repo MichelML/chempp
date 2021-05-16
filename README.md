@@ -7,7 +7,7 @@
 ***
 ***
 *** To avoid retyping too much info. Do a search and replace for the following:
-*** michelml, chempp, twitter_handle, email, chempp, project_description
+*** michelml, chempp, twitter_handle, michmoreau.l@gmail.com, chempp, project_description
 -->
 
 
@@ -20,20 +20,16 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![Contributors][contributors-shield]][[contributors-url](https://github.com/MichelML/chempp/graphs/contributors)]
+[![Forks][forks-shield]][[forks-url](https://github.com/MichelML/chempp/network/members)]
+[![Stargazers][stars-shield]][[stars-url](https://github.com/MichelML/chempp/stargazers)]
+[![Issues][issues-shield]][[issues-url](https://github.com/MichelML/chempp/issues)]
+[![MIT License][license-shield]][[LICENSE](https://github.com/MichelML/chempp/blob/master/LICENSE)]
 
-
-
-<!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/michelml/chempp">
-    <img src="chempp.png" alt="Logo" width="80" height="80">
+    <img src="chempp.png" alt="Chempp - Project Logo" width="200" height="200">
   </a>
 
   <h3 align="center">chempp</h3>
@@ -87,10 +83,9 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`michelml`, `chempp`, `twitter_handle`, `email`, `chempp`, `project_description`
+[Large scale] concurrent chemical search using Postgres RDKit cartridge, Oat++ and native C++ features.
 
+This is my capstone project for the C++ nanodegree https://www.udacity.com/course/c-plus-plus-nanodegree--nd213 .
 
 ### Built With
 
@@ -165,7 +160,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - michmoreau.l@gmail.com
 
 Project Link: [https://github.com/michelml/chempp](https://github.com/michelml/chempp)
 
