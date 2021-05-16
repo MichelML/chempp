@@ -20,11 +20,12 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][https://github.com/MichelML/chempp/graphs/contributors]
-[![Forks][forks-shield]][https://github.com/MichelML/chempp/network/members]
-[![Stargazers][stars-shield]][https://github.com/MichelML/chempp/stargazers]
-[![Issues][issues-shield]][https://github.com/MichelML/chempp/issues]
-[![MIT License][license-shield]][https://github.com/MichelML/chempp/blob/master/LICENSE]
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![Apache License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <br />
 <p align="center">
@@ -170,3 +171,20 @@ Project Link: [https://github.com/michelml/chempp](https://github.com/michelml/c
 ## Acknowledgements
 
 Thank you Udacity, RDKit, Oat++, and CPP team.
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/michelml/chempp.svg?style=for-the-badge
+[contributors-url]: https://github.com/michelml/chempp/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/michelml/chempp.svg?style=for-the-badge
+[forks-url]: https://github.com/michelml/chempp/network/members
+[stars-shield]: https://img.shields.io/github/stars/michelml/chempp.svg?style=for-the-badge
+[stars-url]: https://github.com/michelml/chempp/stargazers
+[issues-shield]: https://img.shields.io/github/issues/michelml/chempp.svg?style=for-the-badge
+[issues-url]: https://github.com/michelml/chempp/issues
+[license-shield]: https://img.shields.io/github/license/michelml/chempp.svg?style=for-the-badge
+[license-url]: https://github.com/michelml/chempp/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/othneildrew
+[product-screenshot]: images/screenshot.png
