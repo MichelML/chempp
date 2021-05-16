@@ -30,7 +30,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/michelml/chempp">
-    <img src="chempp.png" alt="Chempp - Project Logo" width="300" height="300">
+    <img src="chempp.png" alt="Chempp - Project Logo" width="200" height="200">
   </a>
 
   <h3 align="center">chempp</h3>
