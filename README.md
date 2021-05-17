@@ -33,8 +33,6 @@
     <img src="chempp.png" alt="Chempp - Project Logo" width="200" height="200">
   </a>
 
-  <h3 align="center">chempp</h3>
-
   <p align="center">
     [Large scale] concurrent chemical search using RDKit cartridge, Oat++ and native Postgres & C++ features.
     <br />
