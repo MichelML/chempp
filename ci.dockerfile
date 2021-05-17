@@ -15,4 +15,4 @@ RUN make
 
 EXPOSE 8000 8000
 
-ENTRYPOINT ["./example-postgresql-exe"]
+ENTRYPOINT ["./example-postgresql-test"]
