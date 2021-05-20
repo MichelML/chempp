@@ -15,5 +15,6 @@ services:
       - "8000:8000"
     depends_on:
       - db
+    command: sh -c "/wait && ./example-postgresql-exe"
     environment:
       CONFIG_PROFILE: local-docker
