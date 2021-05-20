@@ -39,11 +39,13 @@ void run(const oatpp::base::CommandLineArguments &args) {
       serviceComponent.serverConnectionProvider.getObject(),
       serviceComponent.serverConnectionHandler.getObject());
 
-  OATPP_LOGD("Server", "Running on port %s...",
-             serviceComponent.serverConnectionProvider.getObject()
-                 ->getProperty("port")
-                 .toString()
-                 ->c_str());
+  auto port = serviceComponent.serverConnectionProvider.getObject()
+                  ->getProperty("port")
+                  .toString()
+                  ->c_str();
+
+  OATPP_LOGD("Server", "Running on port %s...", port);
+  OATPP_LOGD("Server", "Full URL at http://localhost:%s", port);
 
   server.run();
 }
