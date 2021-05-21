@@ -2,7 +2,7 @@ version: '3'
 
 services:
   db:
-    image: postgres
+    image: informaticsmatters/rdkit-cartridge-debian
     restart: always
     environment:
       POSTGRES_PASSWORD: db-pass
