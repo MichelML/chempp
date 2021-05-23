@@ -1,8 +1,15 @@
+-- More info on each steps at https://rdkit.org/docs/Cartridge.html
+
+-- Make sure to start from scratch when populating
 drop database if exists molecules;
+
+-- Load raw data
 create table raw_data (id SERIAL, smiles text, mcule_id text);
 create extension rdkit;
 copy raw_data(smiles, mcule_id)
 from '/mcule.smi' DELIMITER E '\t' CSV;
+
+-- Create the molecules and build the substructure search index:
 select * into mols
 from (
         select id,
@@ -11,6 +18,8 @@ from (
     ) tmp
 where m is not null;
 create index molidx on mols using gist(m);
+
+-- Create some fingerprints and build the similarity search index:
 select id,
     m::text,
     torsionbv_fp(m) as torsionbv,
