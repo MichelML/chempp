@@ -97,7 +97,17 @@ This is my capstone project for the C++ nanodegree https://www.udacity.com/cours
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
+Start the db and service (this will build the images if not done already):
+
+```bash
+docker-compose up
+```
+
+Fill the db with the compounds
+
+```bash
+sudo docker-compose exec db bash -c "/utility/populate_db.sh"
+```
 
 ### Prerequisites
 
