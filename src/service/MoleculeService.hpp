@@ -18,6 +18,7 @@ private:
 public:
 
   oatpp::Object<MoleculeDto> getMoleculeById(const oatpp::Int64& id);
+  oatpp::Object<MoleculeDetailedDto> getExactMolecule(const oatpp::String& structure);
   oatpp::Object<ListDto<oatpp::Object<MoleculeDto>>> getSubstructureMatches(const oatpp::String& structure, const oatpp::Int64& limit);
 };
 

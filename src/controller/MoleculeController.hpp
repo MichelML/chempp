@@ -49,6 +49,22 @@ public:
     return createDtoResponse(Status::CODE_200, m_moleculeService.getMoleculeById(moleculeId));
   }
 
+  ENDPOINT_INFO(getExactMolecule)
+  {
+    info->summary = "Get one molecule by SMILES with additional information";
+
+    info->addResponse<Object<MoleculeDetailedDto>>(Status::CODE_200, "application/json");
+    info->addResponse<Object<StatusDto>>(Status::CODE_404, "application/json");
+    info->addResponse<Object<StatusDto>>(Status::CODE_500, "application/json");
+
+    info->pathParams["structure"].description = "Molecule SMILES";
+  }
+  ENDPOINT("GET", "molecules/exact_search/{structure}", getExactMolecule,
+           PATH(String, structure))
+  {
+    return createDtoResponse(Status::CODE_200, m_moleculeService.getExactMolecule(structure));
+  }
+
   ENDPOINT_INFO(getSubstructureMatches)
   {
     info->summary = "Get substructure search matches";
