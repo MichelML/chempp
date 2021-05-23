@@ -30,7 +30,7 @@ public:
 
 
   QUERY(getMoleculeById,
-        "SELECT id, m::text as smiles from mols where id=:id;",
+        "SELECT id, cast(m as text) as smiles from mols where id=:id;",
         PREPARE(true), //<-- user prepared statement!
         PARAM(oatpp::Int64, id))
 
