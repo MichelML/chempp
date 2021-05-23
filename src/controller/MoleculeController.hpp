@@ -40,7 +40,7 @@ public:
   ENDPOINT("GET", "molecules/{moleculeId}", getMoleculeById,
            PATH(String, moleculeId))
   {
-    return createDtoResponse(Status::CODE_200, m_moleculeService.getMoleculeById(userId));
+    return createDtoResponse(Status::CODE_200, m_moleculeService.getMoleculeById(moleculeId));
   }
 };
 
