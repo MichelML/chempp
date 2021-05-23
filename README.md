@@ -80,8 +80,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/MichelML/chempp)
-
 **chempp** [kem-pee-pee], is a large scale concurrent chemical search engine using RDKit cartridge, Oat++ and native Postgres & C++ features.
 
 This is my capstone project for the C++ nanodegree https://www.udacity.com/course/c-plus-plus-nanodegree--nd213 .
