@@ -10,7 +10,6 @@ add_library(${project_name}-lib
         src/controller/MoleculeController.hpp
         src/db/MoleculeDb.hpp
         src/dto/ConfigDto.hpp
-        src/dto/PageDto.hpp
         src/dto/StatusDto.hpp
         src/dto/MoleculeDto.hpp
         src/service/MoleculeService.cpp
