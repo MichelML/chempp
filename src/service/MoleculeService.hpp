@@ -12,7 +12,7 @@ class MoleculeService {
 private:
   typedef oatpp::web::protocol::http::Status Status;
 private:
-  OATPP_COMPONENT(std::shared_ptr<UserDb>, m_database); // Inject database component
+  OATPP_COMPONENT(std::shared_ptr<MoleculeDb>, m_database); // Inject database component
 public:
 
   oatpp::Object<MoleculeDto> getMoleculeById(const oatpp::String& id);

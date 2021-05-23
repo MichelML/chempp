@@ -4,7 +4,6 @@
 #include "ServiceComponent.hpp"
 #include "SwaggerComponent.hpp"
 #include "controller/MoleculeController.hpp"
-#include "controller/UserController.hpp"
 
 #include "oatpp-swagger/Controller.hpp"
 
