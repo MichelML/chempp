@@ -36,9 +36,9 @@ public:
         PARAM(oatpp::Int64, id))
 
   QUERY(getSubstructureMatches,
-        "SELECT id, cast(m as text) as smiles from mols where m@>:smiles limit :limit;",
+        "SELECT id, m, (cast m as text) as smiles from mols where m@>:structure limit :limit;",
         PREPARE(true), //<-- user prepared statement!
-        PARAM(oatpp::String, smiles),
+        PARAM(oatpp::String, structure),
         PARAM(oatpp::Int64, limit))
 };
 
