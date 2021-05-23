@@ -36,10 +36,9 @@ public:
         PARAM(oatpp::Int64, id))
 
   QUERY(getExactMolecule,
-        "SELECT id, cast(m as text) as smiles, mol_inchikey(m) as inchikey, mol_amw(m) as amw, mol_logp(m) as logp from mols where m@>cast(:structure as qmol) limit :limit;",
+        "SELECT id, cast(m as text) as smiles, mol_inchikey(m) as inchikey, mol_amw(m) as amw, mol_logp(m) as logp from mols where m @= cast(:structure as mol);",
         PREPARE(true), 
-        PARAM(oatpp::String, structure),
-        PARAM(oatpp::Int64, limit))
+        PARAM(oatpp::String, structure))
 
   QUERY(getSubstructureMatches,
         "SELECT id, cast(m as text) as smiles from mols where m@>cast(:structure as qmol) limit :limit;",
