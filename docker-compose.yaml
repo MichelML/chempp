@@ -1,16 +1,29 @@
-version: '3'
+version: "3.9"
 
 services:
   db:
-    image: informaticsmatters/rdkit-cartridge-debian
+    build:
+      context: .
+      dockerfile: dockerfiles/db/Dockerfile
     restart: always
     environment:
       POSTGRES_PASSWORD: db-pass
     ports:
       - 5432:5432
-
+    volumes:
+      - emolecules_db:/var/lib/postgresql/data
+    deploy:
+      resources:
+        limits:
+          cpus: "4.00"
+          memory: 2g
+        reservations:
+          cpus: "3.00"
+          memory: 1g
   service:
-    build: .
+    build:
+      context: .
+      dockerfile: dockerfiles/service/Dockerfile
     ports:
       - "8000:8000"
     depends_on:
@@ -18,3 +31,5 @@ services:
     command: sh -c "/wait && ./example-postgresql-exe"
     environment:
       CONFIG_PROFILE: local-docker
+volumes:
+  emolecules_db:
