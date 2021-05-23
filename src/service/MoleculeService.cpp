@@ -15,3 +15,24 @@ MoleculeService::getMoleculeById(const oatpp::Int64 &id) {
 
   return result[0];
 }
+
+oatpp::Object<PageDto<oatpp::Object<MoleculeDto>>>
+MoleculeService::getSubstructureMatches(const oatpp::String &smiles) {
+  oatpp::UInt32 countToFetch = limit;
+
+  if (limit > 200) {
+    countToFetch = 200;
+  }
+
+  auto dbResult = m_database->getSubstructureMatches(smiles, limit);
+  OATPP_ASSERT_HTTP(dbResult->isSuccess(), Status::CODE_500,
+                    dbResult->getErrorMessage());
+
+  auto items = dbResult->fetch<oatpp::Vector<oatpp::Object<MoleculeDto>>>();
+  auto resultsList = PageDto<oatpp::Object<UserDto>>::createShared();
+  page->limit = countToFetch;
+  page->input = smiles;
+  page->items = items;
+
+  return resultsList;
+}

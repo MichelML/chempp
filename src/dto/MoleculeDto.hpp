@@ -12,6 +12,7 @@ class MoleculeDto : public oatpp::DTO {
 
   DTO_FIELD(Int64, id, "id");
   DTO_FIELD(String, smiles, "smiles");
+  DTO_FIELD(Float64, smiliarity, "similarity");
 };
 
 #include OATPP_CODEGEN_END(DTO)

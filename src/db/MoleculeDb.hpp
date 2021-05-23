@@ -3,6 +3,7 @@
 #define EXAMPLE_POSTGRESQL_MOLECULEDB_HPP
 
 #include "dto/MoleculeDto.hpp"
+#include "dto/MoleculeListDto.hpp"
 #include "oatpp-postgresql/orm.hpp"
 
 #include OATPP_CODEGEN_BEGIN(DbClient) //<- Begin Codegen
@@ -34,6 +35,11 @@ public:
         PREPARE(true), //<-- user prepared statement!
         PARAM(oatpp::Int64, id))
 
+  QUERY(getSubstructureMatches,
+        "SELECT id, cast(m as text) as smiles from mols where m@>:smiles limit :limit;",
+        PREPARE(true), //<-- user prepared statement!
+        PARAM(oatpp::String, smiles),
+        PARAM(oatpp::Int64, limit))
 };
 
 #include OATPP_CODEGEN_END(DbClient) //<- End Codegen
