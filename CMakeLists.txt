@@ -7,14 +7,14 @@ project(${project_name})
 set(CMAKE_CXX_STANDARD 11)
 
 add_library(${project_name}-lib
-        src/controller/UserController.hpp
-        src/db/UserDb.hpp
+        src/controller/MoleculeController.hpp
+        src/db/MoleculeDb.hpp
         src/dto/ConfigDto.hpp
         src/dto/PageDto.hpp
         src/dto/StatusDto.hpp
-        src/dto/UserDto.hpp
-        src/service/UserService.cpp
-        src/service/UserService.hpp
+        src/dto/MoleculeDto.hpp
+        src/service/MoleculeService.cpp
+        src/service/MoleculeService.hpp
         src/AppComponent.hpp
         src/DatabaseComponent.hpp
         src/ErrorHandler.cpp
