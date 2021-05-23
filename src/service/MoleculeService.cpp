@@ -2,7 +2,7 @@
 #include "MoleculeService.hpp"
 
 oatpp::Object<MoleculeDto>
-MoleculeService::getMoleculeById(const oatpp::String &id) {
+MoleculeService::getMoleculeById(const oatpp::Int64 &id) {
 
   auto dbResult = m_database->getMoleculeById(id);
   OATPP_ASSERT_HTTP(dbResult->isSuccess(), Status::CODE_500,

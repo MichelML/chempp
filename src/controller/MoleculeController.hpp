@@ -38,7 +38,7 @@ public:
     info->pathParams["moleculeId"].description = "Molecule Identifier";
   }
   ENDPOINT("GET", "molecules/{moleculeId}", getMoleculeById,
-           PATH(String, moleculeId))
+           PATH(Int64, moleculeId))
   {
     return createDtoResponse(Status::CODE_200, m_moleculeService.getMoleculeById(moleculeId));
   }
