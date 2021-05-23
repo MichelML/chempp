@@ -15,7 +15,7 @@ private:
   OATPP_COMPONENT(std::shared_ptr<MoleculeDb>, m_database); // Inject database component
 public:
 
-  oatpp::Object<MoleculeDto> getMoleculeById(const oatpp::String& id);
+  oatpp::Object<MoleculeDto> getMoleculeById(const oatpp::Int64& id);
 };
 
 #endif //EXAMPLE_POSTGRESQL_MOLECULESERVICE_HPP

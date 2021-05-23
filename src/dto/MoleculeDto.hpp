@@ -10,7 +10,8 @@ class MoleculeDto : public oatpp::DTO {
   
   DTO_INIT(MoleculeDto, DTO)
 
-  DTO_FIELD(Int64, id);
+  DTO_FIELD(Int64, id, "id");
+  DTO_FIELD(String, m, "m");
   DTO_FIELD(String, smiles, "smiles");
 };
 
