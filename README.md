@@ -150,7 +150,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - michmoreau.l@gmail.com
+Michel ML - @michelml - michmoreau.l@gmail.com
 
 Project Link: [https://github.com/michelml/chempp](https://github.com/michelml/chempp)
 
