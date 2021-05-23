@@ -32,12 +32,12 @@ public:
 
   QUERY(getMoleculeById,
         "SELECT id, cast(m as text) as smiles from mols where id=:id;",
-        PREPARE(true), //<-- user prepared statement!
+        PREPARE(true), 
         PARAM(oatpp::Int64, id))
 
   QUERY(getSubstructureMatches,
         "SELECT id, cast(m as text) as smiles from mols where m@>cast(:structure as qmol) limit :limit;",
-        PREPARE(true), //<-- user prepared statement!
+        PREPARE(true), 
         PARAM(oatpp::String, structure),
         PARAM(oatpp::Int64, limit))
 };
