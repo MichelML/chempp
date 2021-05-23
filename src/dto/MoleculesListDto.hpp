@@ -9,7 +9,7 @@
 template<class T>
 class ListDto : public oatpp::DTO {
 
-  DTO_INIT(PageDto, DTO)
+  DTO_INIT(ListDto, DTO)
 
   DTO_FIELD(oatpp::String, input);
   DTO_FIELD(oatpp::Int64, limit);
@@ -17,7 +17,7 @@ class ListDto : public oatpp::DTO {
 };
 
 class MoleculesListDto : public ListDto<oatpp::Object<MoleculeDto>> {
-  DTO_INIT(MoleculesPageDto, ListDto<oatpp::Object<MoleculeDto>>)
+  DTO_INIT(MoleculesListDto, ListDto<oatpp::Object<MoleculeDto>>)
 };
 
 #include OATPP_CODEGEN_END(DTO)

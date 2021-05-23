@@ -4,6 +4,8 @@
 
 #include "db/MoleculeDb.hpp"
 #include "dto/StatusDto.hpp"
+#include "dto/MoleculeDto.hpp"
+#include "dto/MoleculesListDto.hpp"
 
 #include "oatpp/web/protocol/http/Http.hpp"
 #include "oatpp/core/macro/component.hpp"

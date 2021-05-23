@@ -12,6 +12,7 @@ add_library(${project_name}-lib
         src/dto/ConfigDto.hpp
         src/dto/StatusDto.hpp
         src/dto/MoleculeDto.hpp
+        src/dto/MoleculesListDto.hpp
         src/service/MoleculeService.cpp
         src/service/MoleculeService.hpp
         src/AppComponent.hpp
