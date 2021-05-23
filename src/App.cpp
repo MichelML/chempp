@@ -3,6 +3,7 @@
 #include "DatabaseComponent.hpp"
 #include "ServiceComponent.hpp"
 #include "SwaggerComponent.hpp"
+#include "controller/MoleculeController.hpp"
 #include "controller/UserController.hpp"
 
 #include "oatpp-swagger/Controller.hpp"
@@ -23,11 +24,11 @@ void run(const oatpp::base::CommandLineArguments &args) {
   auto router = serviceComponent.httpRouter.getObject();
   auto docEndpoints = oatpp::swagger::Controller::Endpoints::createShared();
 
-  auto userController = UserController::createShared();
-  userController->addEndpointsToRouter(router);
+  auto moleculeController = MoleculeController::createShared();
+  moleculeController->addEndpointsToRouter(router);
 
   docEndpoints->pushBackAll(
-      userController->getEndpoints()); // Add userController to swagger
+      moleculeController->getEndpoints()); // Add moleculeController to swagger
 
   auto swaggerController =
       oatpp::swagger::Controller::createShared(docEndpoints);
