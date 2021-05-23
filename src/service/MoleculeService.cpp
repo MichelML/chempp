@@ -1,5 +1,6 @@
 
 #include "MoleculeService.hpp"
+#include "utilities/uri.hpp"
 
 oatpp::Object<MoleculeDto>
 MoleculeService::getMoleculeById(const oatpp::Int64 &id) {
@@ -25,14 +26,16 @@ MoleculeService::getSubstructureMatches(const oatpp::String &structure,
     countToFetch = 200;
   }
 
-  auto dbResult = m_database->getSubstructureMatches(structure, limit);
+  std::string parsedStructure = decodeURIComponent(structure->std_str());
+  oatpp::String finalStructure = parsedStructure.c_str();
+  auto dbResult = m_database->getSubstructureMatches(finalStructure, limit);
   OATPP_ASSERT_HTTP(dbResult->isSuccess(), Status::CODE_500,
                     dbResult->getErrorMessage());
 
   auto items = dbResult->fetch<oatpp::Vector<oatpp::Object<MoleculeDto>>>();
   auto resultsList = ListDto<oatpp::Object<MoleculeDto>>::createShared();
   resultsList->limit = countToFetch;
-  resultsList->input = structure;
+  resultsList->input = finalStructure;
   resultsList->items = items;
 
   return resultsList;
