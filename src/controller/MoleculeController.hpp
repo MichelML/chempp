@@ -58,13 +58,16 @@ public:
     info->addResponse<Object<StatusDto>>(Status::CODE_500, "application/json");
 
     info->pathParams["smiles"].description = "Molecule SMILES";
-    info->queryParams.add<Int64>("limit").description = "Number of molecules returned";
+    info->queryParams.add<String>("limit").description = "Number of molecules returned";
+    info->queryParams["limit"].required = false; // make parameter optional
   }
   ENDPOINT("GET", "molecules/substruct_search/{smiles}/*", getSubstructureMatches,
             REQUEST(std::shared_ptr<IncomingRequest>, request), // Map request object to endpoint method
            PATH(String, smiles))
   {
-    auto limit = request->getQueryParameter("limit", 100);
+    auto limit = request->getQueryParameter("limit", "100");
+    bool success;
+    Int64 limitInt = oatpp::utils::conversion::strToInt64(limit, success);
     return createDtoResponse(Status::CODE_200, m_moleculeService.getSubstructureMatches(smiles, limitInt));
   }
 };
