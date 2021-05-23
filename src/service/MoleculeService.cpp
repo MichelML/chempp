@@ -19,7 +19,7 @@ MoleculeService::getMoleculeById(const oatpp::Int64 &id) {
 oatpp::Object<ListDto<oatpp::Object<MoleculeDto>>>
 MoleculeService::getSubstructureMatches(const oatpp::String &smiles,
                                         const oatpp::Int64 &limit) {
-  oatpp::UInt32 countToFetch = limit;
+  oatpp::Int64 countToFetch = limit;
 
   if (limit > 200) {
     countToFetch = 200;
@@ -31,9 +31,9 @@ MoleculeService::getSubstructureMatches(const oatpp::String &smiles,
 
   auto items = dbResult->fetch<oatpp::Vector<oatpp::Object<MoleculeDto>>>();
   auto resultsList = ListDto<oatpp::Object<MoleculeDto>>::createShared();
-  page->limit = countToFetch;
-  page->input = smiles;
-  page->items = items;
+  resultsList->limit = countToFetch;
+  resultsList->input = smiles;
+  resultsList->items = items;
 
   return resultsList;
 }

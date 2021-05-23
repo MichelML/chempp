@@ -18,7 +18,7 @@ private:
 public:
 
   oatpp::Object<MoleculeDto> getMoleculeById(const oatpp::Int64& id);
-  oatpp::Object<MoleculeDto> getSubstructureMatches(const oatpp::String& smiles, const oatpp::Int64& limit);
+  oatpp::Object<ListDto<oatpp::Object<MoleculeDto>>> getSubstructureMatches(const oatpp::String& smiles, const oatpp::Int64& limit);
 };
 
 #endif //EXAMPLE_POSTGRESQL_MOLECULESERVICE_HPP

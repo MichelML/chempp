@@ -3,7 +3,7 @@
 #define EXAMPLE_POSTGRESQL_MOLECULEDB_HPP
 
 #include "dto/MoleculeDto.hpp"
-#include "dto/MoleculeListDto.hpp"
+#include "dto/MoleculesListDto.hpp"
 #include "oatpp-postgresql/orm.hpp"
 
 #include OATPP_CODEGEN_BEGIN(DbClient) //<- Begin Codegen
