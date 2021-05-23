@@ -5,6 +5,8 @@
 #include "service/MoleculeService.hpp"
 
 #include "oatpp/web/server/api/ApiController.hpp"
+#include "oatpp/network/Url.hpp"
+#include "oatpp/core/utils/ConversionUtils.hpp"
 #include "oatpp/parser/json/mapping/ObjectMapper.hpp"
 #include "oatpp/core/macro/codegen.hpp"
 
@@ -56,18 +58,14 @@ public:
     info->addResponse<Object<StatusDto>>(Status::CODE_500, "application/json");
 
     info->pathParams["smiles"].description = "Molecule SMILES";
+    info->queryParams.add<Int64>("limit").description = "Number of molecules returned";
   }
   ENDPOINT("GET", "molecules/substruct_search/{smiles}/*", getSubstructureMatches,
             REQUEST(std::shared_ptr<IncomingRequest>, request), // Map request object to endpoint method
            PATH(String, smiles))
   {
-    // queryParams logic was taken from https://github.com/oatpp/oatpp/issues/20#issuecomment-433079273
-    String tail = request->getPathTail(); // everything that goes after '*'
-    OATPP_ASSERT_HTTP(tail, Status::CODE_400, "null query-params");
-    auto queryParams = oatpp::network::Url::Parser::parseQueryParams(tail);
-    Int64 limit = queryParams->get("limit"/* parameter name */, 100 /* default value */);
-
-    return createDtoResponse(Status::CODE_200, m_moleculeService.getSubstructureMatches(smiles, limit));
+    auto limit = request->getQueryParameter("limit", 100);
+    return createDtoResponse(Status::CODE_200, m_moleculeService.getSubstructureMatches(smiles, limitInt));
   }
 };
 
