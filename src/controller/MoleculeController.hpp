@@ -11,7 +11,7 @@
 #include OATPP_CODEGEN_BEGIN(ApiController) //<- Begin Codegen
 
 /**
- * User REST controller.
+ * Molecule REST controller.
  */
 class MoleculeController : public oatpp::web::server::api::ApiController {
 public:
@@ -31,7 +31,7 @@ public:
   ENDPOINT_INFO(getMoleculeById) {
     info->summary = "Get one molecule by molecule id";
 
-    info->addResponse<Object<UserDto>>(Status::CODE_200, "application/json");
+    info->addResponse<Object<MoleculeDto>>(Status::CODE_200, "application/json");
     info->addResponse<Object<StatusDto>>(Status::CODE_404, "application/json");
     info->addResponse<Object<StatusDto>>(Status::CODE_500, "application/json");
 
