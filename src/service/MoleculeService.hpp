@@ -2,8 +2,7 @@
 #ifndef EXAMPLE_POSTGRESQL_MOLECULESERVICE_HPP
 #define EXAMPLE_POSTGRESQL_MOLECULESERVICE_HPP
 
-#include "db/UserDb.hpp"
-#include "dto/PageDto.hpp"
+#include "db/MoleculeDb.hpp"
 #include "dto/StatusDto.hpp"
 
 #include "oatpp/web/protocol/http/Http.hpp"
@@ -16,7 +15,7 @@ private:
   OATPP_COMPONENT(std::shared_ptr<UserDb>, m_database); // Inject database component
 public:
 
-  oatpp::Object<UserDto> getMoleculeById(const oatpp::String& id);
+  oatpp::Object<MoleculeDto> getMoleculeById(const oatpp::String& id);
 };
 
 #endif //EXAMPLE_POSTGRESQL_MOLECULESERVICE_HPP
