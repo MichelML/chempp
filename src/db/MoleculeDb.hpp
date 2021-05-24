@@ -47,8 +47,7 @@ public:
         PARAM(oatpp::Int64, limit))
 
   QUERY(getSimilarityMatches,
-        "set rdkit.tanimoto_threshold=cast(:threshold as float);SELECT id, smiles, tanimoto_sml(morganbv_fp(cast(:structure as mol)),mfp2) as similarity from fps where mfp2%morganbv_fp(cast(:structure as mol)) limit :limit;
- limit :limit;",
+        "set rdkit.tanimoto_threshold=cast(:threshold as float);SELECT id, smiles, tanimoto_sml(morganbv_fp(cast(:structure as mol)),mfp2) as similarity from fps where mfp2%morganbv_fp(cast(:structure as mol)) limit :limit;",
         PREPARE(true), 
         PARAM(oatpp::String, structure),
         PARAM(oatpp::Int64, limit),
