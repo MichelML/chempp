@@ -113,7 +113,9 @@ Once these two commands are ran, you are ready to test the endpoints at http://l
 
 ### Prerequisites
 
-TBD
+- [Git](https://git-scm.com/)
+- [Docker and Docker-Compose](https://www.docker.com/)
+- [make](https://www.gnu.org/software/make/)
 
 ### Installation
 
