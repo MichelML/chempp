@@ -1,6 +1,9 @@
 
 #include "MoleculeService.hpp"
+#include "oatpp/core/utils/ConversionUtils.hpp"
 #include "utilities/uri.hpp"
+#include <regex>
+#include <string>
 
 oatpp::Object<MoleculeDto>
 MoleculeService::getMoleculeById(const oatpp::Int64 &id) {
@@ -76,7 +79,14 @@ MoleculeService::getSimilarityMatches(const oatpp::String &structure,
 
   std::string parsedStructure = decodeURIComponent(structure->std_str());
   oatpp::String finalStructure = parsedStructure.c_str();
-  m_database->setTanimotoThreshold(simThreshold);
+
+  oatpp::String stringThreshold =
+      oatpp::utils::conversion::float64ToStr(simThreshold, "%.2g");
+  std::string tanimotoThresholdQuery = "set rdkit.tanimoto_threshold=XX;";
+  tanimotoThresholdQuery = std::regex_replace(
+      tanimotoThresholdQuery, std::regex("XX"), stringThreshold->std_str());
+  oatpp::String tanimotoThresholdQueryFinal = tanimotoThresholdQuery.c_str();
+  m_database->executeQuery(tanimotoThresholdQueryFinal, {});
   auto dbResult =
       m_database->getSimilarityMatches(finalStructure, countToFetch);
   OATPP_ASSERT_HTTP(dbResult->isSuccess(), Status::CODE_500,

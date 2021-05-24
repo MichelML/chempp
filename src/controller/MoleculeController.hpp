@@ -112,6 +112,9 @@ public:
     auto threshold = request->getQueryParameter("threshold", "0.5");
     bool successThreshold;
     Float64 thresholdFloat = oatpp::utils::conversion::strToFloat64(threshold, successThreshold);
+    if (successThreshold == false) {
+      thresholdFloat = 0.5;
+    }
     return createDtoResponse(Status::CODE_200, m_moleculeService.getSimilarityMatches(structure, limitInt, thresholdFloat));
   }
 };
