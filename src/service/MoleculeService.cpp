@@ -76,8 +76,9 @@ MoleculeService::getSimilarityMatches(const oatpp::String &structure,
 
   std::string parsedStructure = decodeURIComponent(structure->std_str());
   oatpp::String finalStructure = parsedStructure.c_str();
-  auto dbResult = m_database->getSimilarityMatches(finalStructure, countToFetch,
-                                                   simThreshold);
+  m_database->setTanimotoThreshold(simThreshold);
+  auto dbResult =
+      m_database->getSimilarityMatches(finalStructure, countToFetch);
   OATPP_ASSERT_HTTP(dbResult->isSuccess(), Status::CODE_500,
                     dbResult->getErrorMessage());
 
