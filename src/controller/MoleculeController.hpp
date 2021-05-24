@@ -101,7 +101,7 @@ public:
     info->queryParams.add<String>("threshold").description = "Similarity threshold to use. Defaults to 0.5";
     info->queryParams["threshold"].required = false; // make parameter optional
   }
-  ENDPOINT("GET", "molecules/substruct_search/{structure}/*", getSubstructureMatches,
+  ENDPOINT("GET", "molecules/similarity_search/{structure}/*", getSimilarityMatches,
             REQUEST(std::shared_ptr<IncomingRequest>, request), // Map request object to endpoint method
            PATH(String, structure))
   {
