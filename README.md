@@ -86,10 +86,10 @@ This is my capstone project for the C++ nanodegree https://www.udacity.com/cours
 
 ### Built With
 
-* []()
-* []()
-* []()
-
+* [OAT++](https://oatpp.io/)
+* [PostgreSQL RDKit cartridge](https://rdkit.org/docs/Cartridge.html)
+* [PostgreSQL](https://www.postgresql.org/)
+* Special mention to Arthur Farias for his very well crafted [url encoding/decoding C++ gist](https://gist.github.com/arthurafarias/56fec2cd49a32f374c02d1df2b6c350f)
 
 
 <!-- GETTING STARTED -->
