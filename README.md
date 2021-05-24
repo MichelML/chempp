@@ -105,7 +105,7 @@ In another terminal window, fill the db with the compounds, this must be done on
 sudo docker-compose exec db bash -c "/utility/populate_db.sh"
 ```
 
-**Warning: This command will take a while because it inserts ~3M rows in the db and [creates indexes to perform efficient searches](https://rdkit.org/docs/Cartridge.html), a rough estimate being between 15 minutes and an hour.**
+**Warning:** This command will take a while because it inserts ~3M rows in the db and [creates indexes to perform efficient searches](https://rdkit.org/docs/Cartridge.html), a rough estimate being between 15 minutes and an hour.
 
 Once these two commands are ran, you are ready to test the endpoints at http://localhost:8000/swagger/ui .
 
