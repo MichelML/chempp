@@ -91,12 +91,6 @@ This is my capstone project for the C++ nanodegree https://www.udacity.com/cours
 * [PostgreSQL](https://www.postgresql.org/)
 * Special mention to Arthur Farias for his very well crafted [url encoding/decoding C++ gist](https://gist.github.com/arthurafarias/56fec2cd49a32f374c02d1df2b6c350f)
 
-### Prerequisites
-
-- [Git](https://git-scm.com/)
-- [Docker and Docker-Compose](https://www.docker.com/)
-- [make](https://www.gnu.org/software/make/)
-
 ## Getting Started
 
 Start the db and service (this will build the images if not done already):
@@ -114,6 +108,16 @@ sudo docker-compose exec db bash -c "/utility/populate_db.sh"
 **Warning: This command will take a while because it inserts ~3M rows in the db and [creates indexes to perform efficient searches](https://rdkit.org/docs/Cartridge.html), a rough estimate being between 15 minutes and an hour.**
 
 Once these two commands are ran, you are ready to test the endpoints at http://localhost:8000/swagger/ui .
+
+### Prerequisites
+
+- [Git](https://git-scm.com/)
+- [Docker and Docker-Compose](https://www.docker.com/)
+- [make](https://www.gnu.org/software/make/)
+
+### Installation
+
+Everything is done through docker and docker-compose. See <a href="#getting-started">Getting Started</a> section.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
