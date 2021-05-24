@@ -25,12 +25,12 @@ MoleculeService::getExactMolecule(const oatpp::String &structure) {
   OATPP_ASSERT_HTTP(dbResult->isSuccess(), Status::CODE_500,
                     dbResult->getErrorMessage());
 
-  auto result = dbResult->fetch<oatpp::Vector<oatpp::Object<MoleculeDetailedDto>>>();
+  auto result =
+      dbResult->fetch<oatpp::Vector<oatpp::Object<MoleculeDetailedDto>>>();
   OATPP_ASSERT_HTTP(result->size() == 1, Status::CODE_500, "Unknown error");
 
   return result[0];
 }
-
 
 oatpp::Object<ListDto<oatpp::Object<MoleculeDto>>>
 MoleculeService::getSubstructureMatches(const oatpp::String &structure,

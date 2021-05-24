@@ -36,7 +36,7 @@ public:
         PARAM(oatpp::Int64, id))
 
   QUERY(getExactMolecule,
-        "SELECT id, cast(m as text) as smiles, mol_inchikey(m) as inchikey, mol_inchi(m) as inchi, mol_amw(m) as amw, mol_logp(m) as logp from mols where m @= cast(:structure as mol) limit 1;",
+        "SELECT id, cast(m as text) as smiles, cast(mol_inchikey(m) as text) as inchikey, cast(mol_inchi(m) as text) as inchi, cast(mol_amw(m) as float) as amw, cast(mol_logp(m) as float) as logp from mols where m @= cast(:structure as mol) limit 1;",
         PREPARE(true), 
         PARAM(oatpp::String, structure))
 

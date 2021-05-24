@@ -23,8 +23,8 @@ class MoleculeDetailedDto : public oatpp::DTO {
   DTO_FIELD(String, smiles, "smiles");
   DTO_FIELD(String, inchikey, "inchikey");
   DTO_FIELD(String, inchi, "inchi");
-  DTO_FIELD(Float64, amw, "amw");
-  DTO_FIELD(Float64, logp, "logp");
+  DTO_FIELD(Float32, amw, "amw");
+  DTO_FIELD(Float32, logp, "logp");
 };
 
 #include OATPP_CODEGEN_END(DTO)
