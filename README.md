@@ -106,7 +106,7 @@ In another terminal window, fill the db with the compounds, this must be done on
 ```bash
 docker-compose exec db bash -c "SMALLDB=1 NODBDROP=1 /utility/populate_db.sh"
 ```
-#### Option 1 - Large database of ~3M compounds
+#### Option 2 - Large database of ~3M compounds
 
 ```bash
 docker-compose exec db bash -c "NODBDROP=1 /utility/populate_db.sh"
