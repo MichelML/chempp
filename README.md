@@ -111,6 +111,8 @@ Once these two commands are ran, you are ready to test the endpoints at http://l
 
 ### Prerequisites
 
+- Knowledge of what a [SMILES](https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system) is in chemistry
+- Knowledge of what a [SMARTS](https://en.wikipedia.org/wiki/SMILES_arbitrary_target_specification) is in chemistry
 - [Git](https://git-scm.com/)
 - [Docker and Docker-Compose](https://www.docker.com/)
 
