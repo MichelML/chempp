@@ -1,9 +1,5 @@
 -- More info on each steps at https://rdkit.org/docs/Cartridge.html
 
--- Make sure to start from scratch when populating
-drop database if exists molecules;
-drop database if exists fps;
-
 -- Load raw data
 create table raw_data (id SERIAL, smiles text, mcule_id text);
 create extension rdkit;

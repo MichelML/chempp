@@ -21,12 +21,11 @@ public:
 
     oatpp::swagger::DocumentInfo::Builder builder;
 
-    builder.setTitle("Example: user-service")
-        .setDescription("Service which stores and reads user info to/from "
-                        "postgresql database")
+    builder.setTitle("Chempp")
+        .setDescription("Large scale concurrent chemical search engine.")
         .setVersion("1.0")
-        .setContactName("Leonid Stryzhevskyi")
-        .setContactUrl("https://oatpp.io/")
+        .setContactName("Michel Moreau")
+        .setContactUrl("https://github.com/MichelML/chempp")
 
         .addServer("http://localhost:" +
                        oatpp::utils::conversion::int32ToStr(config->port),
