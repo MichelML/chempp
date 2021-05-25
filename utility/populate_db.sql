@@ -2,12 +2,13 @@
 
 -- Make sure to start from scratch when populating
 drop database if exists molecules;
+drop database if exists fps;
 
 -- Load raw data
 create table raw_data (id SERIAL, smiles text, mcule_id text);
 create extension rdkit;
 copy raw_data(smiles, mcule_id)
-from '/mcule.smi' DELIMITER E '\t' CSV;
+from '/mcule.smi' DELIMITER E'\t' CSV;
 
 -- Create the molecules and build the substructure search index:
 select * into mols
