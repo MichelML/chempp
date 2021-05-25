@@ -93,6 +93,13 @@ This is my capstone project for the C++ nanodegree https://www.udacity.com/cours
 
 ## Getting Started
 
+Clone the project
+
+```bash
+git clone https://github.com/MichelML/chempp.git && \
+cd chempp
+```
+
 Start the db and service (this will build the images if not done already):
 
 ```bash
@@ -114,7 +121,7 @@ docker-compose exec db bash -c "NODBDROP=1 /utility/populate_db.sh"
 
 > **Warning:** This command will take a while because it inserts ~3M rows in the db and [creates indexes to perform efficient searches](https://rdkit.org/docs/Cartridge.html), a rough estimate being between 15 minutes and an hour.
 
-Once these two commands are ran, you are ready to test the endpoints at http://localhost:8000/swagger/ui .
+Once these commands are ran, you are ready to test the endpoints at http://localhost:8000/swagger/ui .
 
 ### Prerequisites
 
