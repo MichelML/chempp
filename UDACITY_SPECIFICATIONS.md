@@ -27,7 +27,7 @@ See whole project for this.
 See database component injection in `src/service/MoleculeService.hpp` line 17 and usage in `src/serbice/MoleculeService.cpp` for this.
 
 > Class constructors utilize member initialization lists.
-N/A (I don't get this one?).
+No direct example in this project.
 
 > Classes abstract implementation details from their interfaces.
 See `src/service/MoleculeService.cpp` (implementation) and `src/service/MoleculeService.hpp` (interface).
@@ -51,16 +51,22 @@ See the generic SimListDto and ListDto classes in `src/dto/MoleculesListDto.hpp`
 ### Memory Management
 
 > The project makes use of references in function declarations.
+See `src/service/MoleculeService.hpp` for this.
 
 > The project uses destructors appropriately.
+All classes use default destructors.
 
 > The project uses scope / Resource Acquisition Is Initialization (RAII) where appropriate.
+Not present in this project.
 
 > The project follows the Rule of 5.
+Not present in this project.
 
 > The project uses move semantics to move data, instead of copying it, where possible.
+Not present in this project.
 
 > The project uses smart pointers instead of raw pointers.
+Search for `shared_ptr` all across the project. The project (and oat++) framework, uses this extensively for dependency injections.
 
 ### Concurrency
 
