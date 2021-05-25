@@ -99,10 +99,17 @@ Start the db and service (this will build the images if not done already):
 docker-compose up
 ```
 
-In another terminal window, fill the db with the compounds, this must be done once the `db` service is up and running.
+In another terminal window, fill the db with the compounds, this must be done once the `db` service is up and running. You have two options.
+
+#### Option 1 - Small Database of 1000 molecules (Recommended for Udacity's reviewers)
 
 ```bash
-sudo docker-compose exec db bash -c "/utility/populate_db.sh"
+docker-compose exec db bash -c "SMALLDB=1 NODBDROP=1 /utility/populate_db.sh"
+```
+#### Option 1 - Large database of ~3M compounds
+
+```bash
+docker-compose exec db bash -c "NODBDROP=1 /utility/populate_db.sh"
 ```
 
 > **Warning:** This command will take a while because it inserts ~3M rows in the db and [creates indexes to perform efficient searches](https://rdkit.org/docs/Cartridge.html), a rough estimate being between 15 minutes and an hour.
@@ -123,7 +130,7 @@ Everything is done through docker and docker-compose. See <a href="#getting-star
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-TBD
+See usage through Swagger demo here https://drive.google.com/file/d/1FKh3-N4KWvVEz7NPFmMDALWu-BzYbaHP/view?usp=sharing .
 
 <!-- ROADMAP -->
 ## Roadmap
