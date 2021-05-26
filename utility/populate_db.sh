@@ -10,14 +10,8 @@ else
   mv mcule_temp.smi mcule.smi
 fi
 
-if [[ -z "${NODBDROP}" ]]; then
-    echo "dropping and recreating existing database"
-    PGPASSWORD=db-pass psql --host db --port 5432 -U postgres -c 'drop database if exists molecules'
-    PGPASSWORD=db-pass createdb --host db --port 5432 -U postgres molecules
-else
-  echo "keeping existing database alive"
-fi
-
+PGPASSWORD=db-pass psql --host db --port 5432 -U postgres -c 'drop database if exists molecules'
+PGPASSWORD=db-pass createdb --host db --port 5432 -U postgres molecules
 PGPASSWORD=db-pass psql --host db --port 5432 -U postgres --dbname=molecules -f /utility/populate_db.sql
 
 rm mcule.smi

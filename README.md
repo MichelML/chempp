@@ -115,12 +115,12 @@ In another terminal window, fill the db with the compounds, this must be done on
 #### Option 1 - Small Database of 1000 molecules (Recommended for Udacity's reviewers)
 
 ```bash
-docker-compose exec db bash -c "SMALLDB=1 NODBDROP=1 /utility/populate_db.sh"
+docker-compose exec db bash -c "SMALLDB=1 /utility/populate_db.sh"
 ```
 #### Option 2 - Large database of ~3M compounds
 
 ```bash
-docker-compose exec db bash -c "NODBDROP=1 /utility/populate_db.sh"
+docker-compose exec db bash -c "/utility/populate_db.sh"
 ```
 
 > **Warning:** This command will take a while because it inserts ~3M rows in the db and [creates indexes to perform efficient searches](https://rdkit.org/docs/Cartridge.html), a rough estimate being between 15 minutes and an hour.
