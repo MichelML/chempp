@@ -20,4 +20,4 @@ fi
 
 PGPASSWORD=db-pass psql --host db --port 5432 -U postgres --dbname=molecules -f /utility/populate_db.sql
 
-rm mcule.smi mcule.smi.gz
+rm mcule.smi
