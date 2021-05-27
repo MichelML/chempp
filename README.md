@@ -64,10 +64,10 @@
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#getting-started">Installation</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#install-steps">Installation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -78,8 +78,6 @@
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
-
-
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
@@ -95,37 +93,7 @@ This is my capstone project for the C++ nanodegree https://www.udacity.com/cours
 * [PostgreSQL](https://www.postgresql.org/)
 * Special mention to Arthur Farias for his very well crafted [url encoding/decoding C++ gist](https://gist.github.com/arthurafarias/56fec2cd49a32f374c02d1df2b6c350f)
 
-## Getting Started
-
-Clone the project
-
-```bash
-git clone https://github.com/MichelML/chempp.git && \
-cd chempp
-```
-
-Start the db and service (this will build the images if not done already):
-
-```bash
-docker-compose up
-```
-
-In another terminal window, fill the db with the compounds, this must be done once the `db` service is up and running. You have two options.
-
-#### Option 1 - Small Database of 1000 molecules (Recommended for Udacity's reviewers)
-
-```bash
-docker-compose exec db bash -c "SMALLDB=1 /utility/populate_db.sh"
-```
-#### Option 2 - Large database of ~3M compounds
-
-```bash
-docker-compose exec db bash -c "/utility/populate_db.sh"
-```
-
-> **Warning:** This command will take a while because it inserts ~3M rows in the db and [creates indexes to perform efficient searches](https://rdkit.org/docs/Cartridge.html), a rough estimate being between 15 minutes and an hour.
-
-Once these commands are ran, you are ready to test the endpoints at http://localhost:8000/swagger/ui .
+## Installation
 
 ### Prerequisites
 
@@ -134,9 +102,38 @@ Once these commands are ran, you are ready to test the endpoints at http://local
 - [Git](https://git-scm.com/)
 - [Docker and Docker-Compose](https://www.docker.com/)
 
-### Installation
+### Install steps
 
-Everything is done through docker and docker-compose. See <a href="#getting-started">Getting Started</a> section.
+Clone the project
+
+```bash
+git clone https://github.com/MichelML/chempp.git && \
+cd chempp
+```
+
+Then, start the db and fill it with molecules. You have two options:
+
+#### Option 1 - Small Database of 1000 molecules (Recommended for Udacity's reviewers)
+
+```bash
+docker-compose up -d db && docker-compose exec db bash -c "SMALLDB=1 /utility/populate_db.sh"
+```
+
+#### Option 2 - Large database of ~3M compounds (Recommended for Udacity's reviewers)
+
+```bash
+docker-compose up -d db && docker-compose exec db bash -c "/utility/populate_db.sh"
+```
+
+> **Warning:** This command will take a while because it inserts ~3M rows in the db and [creates indexes to perform efficient searches](https://rdkit.org/docs/Cartridge.html), a rough estimate being between 15 minutes and an hour.
+
+Lastly, start the chempp service:
+
+```bash
+docker-compose up service
+```
+
+Once these commands are ran, you are ready to test the endpoints at http://localhost:8000/swagger/ui .
 
 <!-- USAGE EXAMPLES -->
 ## Usage
