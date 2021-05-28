@@ -20,9 +20,6 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-**Udacity reviewers: See `UDACITY_SPECIFICATIONS.md` file for reviewing the project**.
-
--------------
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -84,8 +81,6 @@
 
 **chempp** [kem-pee-pee], is a large scale concurrent chemical search engine using RDKit cartridge, Oat++ and native Postgres & C++ features.
 
-This is my capstone project for the C++ nanodegree https://www.udacity.com/course/c-plus-plus-nanodegree--nd213 .
-
 ### Built With
 
 * [Oat++](https://oatpp.io/)
@@ -113,14 +108,14 @@ cd chempp
 
 Then, start the db and fill it with molecules. You have two options:
 
-#### Option 1 - Small Database of 1000 molecules (Recommended for Udacity's reviewers)
+#### Option 1 - Small Database of 1000 molecules
 
 ```bash
 docker-compose up -d db && \
 docker-compose exec db bash -c "SMALLDB=1 /utility/populate_db.sh"
 ```
 
-#### Option 2 - Large database of ~3M compounds (Recommended for Udacity's reviewers)
+#### Option 2 - Large database of ~3M compounds
 
 ```bash
 docker-compose up -d db && \
