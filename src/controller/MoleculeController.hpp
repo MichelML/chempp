@@ -78,7 +78,7 @@ public:
     info->queryParams["limit"].required = false; // make parameter optional
   }
   ENDPOINT("GET", "molecules/substruct_search/{structure}/*", getSubstructureMatches,
-            REQUEST(std::shared_ptr<IncomingRequest>, request), // Map request object to endpoint method
+           REQUEST(std::shared_ptr<IncomingRequest>, request), // Map request object to endpoint method
            PATH(String, structure))
   {
     auto limit = request->getQueryParameter("limit", "100");
@@ -97,25 +97,14 @@ public:
 
     info->pathParams["structure"].description = "Molecule SMILES";
     info->queryParams.add<String>("limit").description = "Number of molecules returned";
-    info->queryParams["limit"].required = false; // make parameter optional
     info->queryParams.add<String>("threshold").description = "Similarity threshold to use. Defaults to 0.5";
-    info->queryParams["threshold"].required = false; // make parameter optional
   }
   ENDPOINT("GET", "molecules/similarity_search/{structure}/*", getSimilarityMatches,
-            REQUEST(std::shared_ptr<IncomingRequest>, request), // Map request object to endpoint method
-           PATH(String, structure))
+           PATH(String, structure),
+           QUERY(Int64, limit, "limit", "100"),
+           QUERY(Float64, threshold, "threshold", "0.5"))
   {
-    auto limit = request->getQueryParameter("limit", "100");
-    bool successLimit;
-    Int64 limitInt = oatpp::utils::conversion::strToInt64(limit, successLimit);
-
-    auto threshold = request->getQueryParameter("threshold", "0.5");
-    bool successThreshold;
-    Float64 thresholdFloat = oatpp::utils::conversion::strToFloat64(threshold, successThreshold);
-    if (successThreshold == false) {
-      thresholdFloat = 0.5;
-    }
-    return createDtoResponse(Status::CODE_200, m_moleculeService.getSimilarityMatches(structure, limitInt, thresholdFloat));
+    return createDtoResponse(Status::CODE_200, m_moleculeService.getSimilarityMatches(structure, limit, threshold));
   }
 };
 
