@@ -1,29 +1,3 @@
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
-***
-***
-***
-*** To avoid retyping too much info. Do a search and replace for the following:
-*** michelml, chempp, twitter_handle, michmoreau.l@gmail.com, chempp, project_description
--->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-**Udacity reviewers: See `UDACITY_SPECIFICATIONS.md` file for reviewing the project**.
-
--------------
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -84,8 +58,6 @@
 
 **chempp** [kem-pee-pee], is a large scale concurrent chemical search engine using RDKit cartridge, Oat++ and native Postgres & C++ features.
 
-This is my capstone project for the C++ nanodegree https://www.udacity.com/course/c-plus-plus-nanodegree--nd213 .
-
 ### Built With
 
 * [Oat++](https://oatpp.io/)
@@ -113,14 +85,14 @@ cd chempp
 
 Then, start the db and fill it with molecules. You have two options:
 
-#### Option 1 - Small Database of 1000 molecules (Recommended for Udacity's reviewers)
+#### Option 1 - Small Database of 1000 molecules
 
 ```bash
 docker-compose up -d db && \
 docker-compose exec db bash -c "SMALLDB=1 /utility/populate_db.sh"
 ```
 
-#### Option 2 - Large database of ~3M compounds (Recommended for Udacity's reviewers)
+#### Option 2 - Large database of ~3M compounds
 
 ```bash
 docker-compose up -d db && \
