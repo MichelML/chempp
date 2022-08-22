@@ -1,4 +1,4 @@
-**In Development** 
+**Paused Development** 
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
